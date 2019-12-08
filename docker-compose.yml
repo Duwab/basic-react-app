@@ -4,7 +4,7 @@ services:
   react_nginx:
     image: jamessmith52963/basic-react:build-latest
     ports:
-      - 81:80
+      - 82:80
     deploy:
       replicas: 1
       restart_policy: 
