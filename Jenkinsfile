@@ -22,7 +22,9 @@ pipeline {
           DOCKER_STACK_NAME = "${DOCKER_STACK_NAME_BASE}_${env.BRANCH_NAME}"
       }
       steps{
-	  sh "echo $DOCKER_STACK_NAME"	
+          params.DOCKER_STACK_NAME = "${params.DOCKER_STACK_NAME_BASE}_${env.BRANCH_NAME}"
+          sh "echo $DOCKER_STACK_NAME"
+          sh "echo '${params.DOCKER_STACK_NAME}'"
       }
     }
     stage('npm install'){
@@ -79,8 +81,8 @@ pipeline {
         }
       }
       steps{
-        sh "echo $DOCKER_STACK_NAME"
-        sh "docker stack rm $DOCKER_STACK_NAME"
+        sh "echo '${params.DOCKER_STACK_NAME}'"
+        sh "docker stack rm ${params.DOCKER_STACK_NAME}"
       }
     }
     stage('Docker Stack Deploy'){
