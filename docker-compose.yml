@@ -5,3 +5,6 @@ services:
     image: jamessmith52963/basic-react:build-latest
     ports:
       - 82:80
+    placement:
+        constraints:
+           - node.role==worker
