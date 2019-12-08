@@ -11,4 +11,4 @@ services:
         condition: any
       placement:
         constraints:
-           - node.hostname == dockertoolbox.com
+           - node.role == worker
