@@ -10,7 +10,7 @@ pipeline {
     string(name: 'IMAGE_REPO_NAME', defaultValue: 'jamessmith52963/basic-react', description: '')
     string(name: 'LATEST_BUILD_TAG', defaultValue: 'build-latest', description: '')
     string(name: 'DOCKER_COMPOSE_FILENAME', defaultValue: 'docker-compose.yml', description: '')
-    string(name: 'DOCKER_STACK_NAME', defaultValue: 'react_stack_${BRANCH_NAME}', description: '')
+    string(name: 'DOCKER_STACK_NAME', defaultValue: "react_stack_${BRANCH_NAME}", description: '')
     string(name: 'DOCKER_STACK_NAME_BASE', defaultValue: 'react_stack', description: '')
     booleanParam(name: 'NPM_RUN_TEST', defaultValue: true, description: '')
     booleanParam(name: 'PUSH_DOCKER_IMAGES', defaultValue: false, description: '')
