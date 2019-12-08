@@ -82,7 +82,7 @@ pipeline {
       steps{
         sh "echo ${params.DOCKER_STACK_NAME}"
         sh "docker stack rm ${params.DOCKER_STACK_NAME}"
-        sh "wait 15"
+        sh "sleep 15"
       }
     }
     stage('Docker Stack Deploy'){
